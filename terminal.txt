@@ -1,0 +1,14 @@
+cd monolith
+npm init -y
+npm i express morgan dotenv sequelize pg
+sequelize init
+
+sequelize model:generate --name User --attributes name:string,email:string,password:string
+
+sequelize db:create
+
+sequelize db:migrate
+
+npm i bcrypt
+
+npm i jsonwebtoken
